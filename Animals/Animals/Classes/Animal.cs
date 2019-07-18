@@ -13,23 +13,23 @@ namespace Animals
         {
             Name = name;
         }
-
-        public virtual void Fly()
-        {
-            Console.WriteLine("This animal can fly.");
-        }
-        public virtual void Walk()
-        {
-            Console.WriteLine("This animal can walk.");
-        }
-        public virtual void Swim()
-        {
-            Console.WriteLine("This animal can swim.");
-        }
-        public virtual void Crawl()
-        {
-            Console.WriteLine("This animal can crawl.");
-        }
-
+        /*
+                public virtual void Fly()
+                {
+                    Console.WriteLine("This animal can fly.");
+                }
+                public virtual void Walk()
+                {
+                    Console.WriteLine("This animal can walk.");
+                }
+                public virtual void Swim()
+                {
+                    Console.WriteLine("This animal can swim.");
+                }
+                public virtual void Crawl()
+                {
+                    Console.WriteLine("This animal can crawl.");
+                }
+                */
     }
 }
