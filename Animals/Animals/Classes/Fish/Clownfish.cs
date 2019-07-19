@@ -4,20 +4,21 @@ using System.Text;
 
 namespace Animals
 {
-    public class Clownfish : Fish
+    public class Clownfish : Fish, ISwim
     {
         Fishes specie = Fishes.Clownfish;
-        int speed;
-        public Clownfish(string name) : base(name)
+        private int swimSpeed;
+        public int SwimSpeed { get; set; }
+        public Clownfish(string name, int swimSpeed) : base(name)
         {
             Console.WriteLine($"{ this.Name} is a {specie} ({AnimalTypes.Fish}) that:");
-
+            SwimSpeed = swimSpeed;
         }
 
         public void Swim()
         {
-            speed = 75;
-            Console.WriteLine($"     - swim with maximum speed of { speed}Km/h.");
+            
+            Console.WriteLine($"     - swim with maximum speed of { SwimSpeed}Km/h.");
         }
 
     }

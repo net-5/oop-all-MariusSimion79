@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Animals
 {
-    public enum Mammals{ Bath, Dolphin, Sheep }
+    public enum Mammals { Bat, Dolphin, Sheep }
     public abstract class Mammal : Animal
     {
         public int Speed { get; set; }
@@ -13,6 +13,6 @@ namespace Animals
 
 
         }
-      
+
     }
 }

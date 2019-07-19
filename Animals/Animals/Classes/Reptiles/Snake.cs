@@ -4,20 +4,21 @@ using System.Text;
 
 namespace Animals
 {
-    public class Snake : Reptile
+    public class Snake : Reptile, ICrawl
     {
         Reptiles specie = Reptiles.Snake;
-        int speed;
-        public Snake(string name) : base(name)
+        private int crawlSpeed;
+        public int CrawlSpeed { get; set; }
+        public Snake(string name, int crawlSpeed) : base(name)
         {
             Console.WriteLine($"{ this.Name} is a {specie} ({AnimalTypes.Reptile}) that:");
-
+            CrawlSpeed = crawlSpeed;
         }
 
         public void Crawl()
         {
-            speed = 15;
-            Console.WriteLine($"     - crawl with maximum speed of { speed}Km/h.");
+            
+            Console.WriteLine($"     - crawl with maximum speed of {CrawlSpeed}Km/h.");
         }
     }
 }

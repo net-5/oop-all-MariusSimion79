@@ -4,20 +4,21 @@ using System.Text;
 
 namespace Animals
 {
-    public class Tarantulla : Insect
+    public class Tarantulla : Insect, IWalk
     {
         Insects specie = Insects.Tarantulla;
-        int speed;
-        public Tarantulla(string name) : base(name)
+        private int walkSpeed;
+        public int WalkSpeed { get; set; }
+        public Tarantulla(string name, int walkSpeed) : base(name)
         {
             Console.WriteLine($"{ this.Name} is a {specie} ({AnimalTypes.Insect}) that:");
-
+            WalkSpeed = walkSpeed;
         }
 
         public void Walk()
         {
-            speed = 10;
-            Console.WriteLine($"     - walk with maximum speed of { speed}Km/h.");
+            
+            Console.WriteLine($"     - walk with maximum speed of { WalkSpeed}Km/h.");
         }
 
 

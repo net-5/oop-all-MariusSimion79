@@ -4,26 +4,31 @@ using System.Text;
 
 namespace Animals
 {
-    public class Crocodile : Reptile
+    public class Crocodile : Reptile, IWalk, ISwim
     {
-        Reptiles specie = Reptiles.Snake;
-        int speed;
-        public Crocodile(string name) : base(name)
+        Reptiles specie = Reptiles.Crocodile;
+        private int walkSpeed;
+        private int swimSpeed;
+        public int WalkSpeed { get; set; }
+        public int SwimSpeed { get; set; }
+
+        public Crocodile(string name,int walkSpeed, int swimSpeed) : base(name)
         {
             Console.WriteLine($"{ this.Name} is a {specie} ({AnimalTypes.Reptile}) that:");
-
+            WalkSpeed = walkSpeed;
+            SwimSpeed = swimSpeed;
         }
 
         public void Walk()
         {
-            speed = 5;
-            Console.WriteLine($"     - walk with maximum speed of { speed}Km/h.");
+            
+            Console.WriteLine($"     - walk with maximum speed of { WalkSpeed}Km/h.");
         }
 
         public void Swim()
         {
-            speed = 30;
-            Console.WriteLine($"     - swim with maximum speed of { speed}Km/h.");
+            
+            Console.WriteLine($"     - swim with maximum speed of { SwimSpeed}Km/h.");
         }
 
     }

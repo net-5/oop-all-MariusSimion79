@@ -4,24 +4,28 @@ using System.Text;
 
 namespace Animals
 {
-    public class Canary : Bird
+    public class Canary : Bird, IFly, IWalk
     {
         Birds specie = Birds.Canary;
-        int speed;
-        public Canary(string name) : base(name)
+        private int flySpeed;
+        private int walkSpeed;
+        public int FlySpeed { get; set; }
+        public int WalkSpeed { get; set; }
+        public Canary(string name, int flySpeed, int walkSpeed) : base(name)
         {
             Console.WriteLine($"{ this.Name} is a {specie} ({AnimalTypes.Bird}) that:");
-
+            FlySpeed = flySpeed;
+            WalkSpeed = walkSpeed;
         }
         public void Fly()
         {
-            speed = 60;
-            Console.WriteLine($"     - fly with maximum speed of { speed}Km/h.");
+            
+            Console.WriteLine($"     - fly with maximum speed of { FlySpeed}Km/h.");
         }
         public void Walk()
         {
-            speed = 2;
-            Console.WriteLine($"     - walk with maximum speed of { speed}Km/h.");
+            
+            Console.WriteLine($"     - walk with maximum speed of { WalkSpeed}Km/h.");
         }
 
 
